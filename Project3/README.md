@@ -20,9 +20,9 @@
 - https://github.com/Seanmatthews/ros-docker-gazebo
 
 
-    sudo apt-get install -y usbutils
-    docker build -f "Dockerfile" -t mrosmcl:latest .
-    bash run_docker.sh
+        sudo apt-get install -y usbutils
+        docker build -f "Dockerfile" -t mrosmcl:latest .
+        bash run_docker.sh
 
 
 ### Git
