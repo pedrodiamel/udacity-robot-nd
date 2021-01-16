@@ -21,10 +21,10 @@
             <param name="subscribe_scan"      type="bool"   value="true"/>
 
             <!-- RTAB-Map Inputs -->
-            <remap from="scan" to="/scan"/>
-            <remap from="rgb/image" to="$(arg rgb_topic)"/>
-            <remap from="depth/image" to="$(arg depth_topic)"/>
-            <remap from="rgb/camera_info" to="$(arg camera_info_topic)"/>
+            <remap from="scan"             to="/scan"/>
+            <remap from="rgb/image"        to="$(arg rgb_topic)"/>
+            <remap from="depth/image"      to="$(arg depth_topic)"/>
+            <remap from="rgb/camera_info"  to="$(arg camera_info_topic)"/>
             <remap from="rgbd_image"       to="rgbd_image"/>
 
             <!-- RTAB-Map Output -->
@@ -55,20 +55,26 @@
 
             <!-- Set to false to avoid saving data when robot is not moving -->
             <param name="Mem/NotLinkedNodesKept" type="string" value="false"/>
+
+        </node>
+
+
+        <!-- visualization with rtabmapviz -->
+        <node pkg="rtabmap_ros" type="rtabmapviz" name="rtabmapviz" args="-d $(find rtabmap_ros)/launch/config/rgbd_gui.ini" output="screen">
+            <param name="subscribe_depth" type="bool" value="true"/>
+            <param name="subscribe_scan"  type="bool" value="true"/>
+            <param name="frame_id"        type="string" value="camera_link"/>
+            <param name="wait_for_transform" type="bool" value="true"/>
+
+            <remap from="rgb/image"       to="$(arg rgb_topic)"/>
+            <remap from="depth/image"     to="$(arg depth_topic)"/>
+            <remap from="rgb/camera_info" to="$(arg camera_info_topic)"/>
+            <remap from="scan"            to="/scan"/>
+            <remap from="odom"            to="/odom"/>
         </node>
 
     </group>
 
-    <!-- visualization with rtabmapviz -->
-    <!-- camera_link_optical -->
-    <node pkg="rtabmap_ros" type="rtabmapviz" name="rtabmapviz" args="-d $(find rtabmap_ros)/launch/config/rgbd_gui.ini" output="screen">
-        <param name="subscribe_depth"             type="bool" value="true"/>
-        <param name="subscribe_scan"              type="bool" value="true"/>
-        <param name="frame_id"                    type="string" value="camera_link"/>
-        <remap from="rgb/image"       to="$(arg rgb_topic)"/>
-        <remap from="depth/image"     to="$(arg depth_topic)"/>
-        <remap from="rgb/camera_info" to="$(arg camera_info_topic)"/>
-        <remap from="scan"            to="/scan"/>
-    </node>
+
 
 </launch>

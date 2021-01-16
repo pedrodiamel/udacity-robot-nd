@@ -34,6 +34,10 @@
         docker build -f "Dockerfile" -t rosudacity:latest .
         bash run_docker.sh
 
+        xhost +
+        docker start mmw-run
+        docker attach mmw-run
+
 
 ### Git
 
