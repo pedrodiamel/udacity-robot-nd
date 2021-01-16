@@ -1,11 +1,22 @@
 # Project 4: Map My World
 
+
+- Db file generated: https://drive.google.com/file/d/1OCbd9_EqUUKv5pViZa8yz5WHtof79qLQ/view?usp=sharing
+
+
 ### Basic commands
 
     mkdir -p /workspace/catkin_ws/src
     cd workspace/catkin_ws/src
     catkin_init_workspace
     catkin_make
+
+    roslaunch my_robot world.launch
+    roslaunch my_robot teleop.launch
+    roslaunch my_robot mapping.launch
+    rtabmap-databaseViewer src/my_robot/rtabmap.db
+    roslaunch my_robot localization.launch
+
 
     git clone https://github.com/ros-teleop/teleop_twist_keyboard
     git clone https://github.com/udacity/pgm_map_creator
@@ -39,17 +50,3 @@
 
 - http://wiki.ros.org/
 - http://answers.ros.org/
-
-
-# Issue
-
-## Failed to create map
-- https://github.com/hyfan1116/pgm_map_creator/issues/1
-
-        # change msgs/CMakeLists.txt to:
-        set (msgs
-        collision_map_request.proto
-        # ${PROTOBUF_IMPORT_DIRS}/vector2d.proto
-        # ${PROTOBUF_IMPORT_DIRS}/header.proto
-        # ${PROTOBUF_IMPORT_DIRS}/time.proto
-        )
