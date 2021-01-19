@@ -85,3 +85,4 @@ Import these packages now and install them in the src directory of your catkin w
 - http://answers.ros.org/
 - http://moorerobots.com/blog/post/3
 - https://www.youtube.com/watch?v=HIK1KBw-Jn4&list=PLVOHtxHwfT2od1TP-4oWY0Nt6LXsQXOTE&index=16&t=0s
+- https://docs.ros.org/en/independent/api/rospkg/html/rospack.html#rospack-find-package
