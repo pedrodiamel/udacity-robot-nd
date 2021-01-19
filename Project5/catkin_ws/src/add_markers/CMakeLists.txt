@@ -208,4 +208,5 @@ add_executable(cube_node src/cube_node.cpp)
 add_dependencies(cube_node nav_msgs_generate_messages_cpp)
 target_link_libraries(cube_node ${catkin_LIBRARIES})
 
-
+add_executable(cube_node_simulate src/cube_node_simulate.cpp)
+target_link_libraries(cube_node_simulate ${catkin_LIBRARIES})
