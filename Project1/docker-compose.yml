@@ -9,7 +9,7 @@ services:
     image: ndros
     build:
       context: .
-      dockerfile: docker/foxy.Dockerfile
+      dockerfile: docker/humble.Dockerfile
     security_opt:
       - seccomp:unconfined
     runtime: nvidia
@@ -33,3 +33,5 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - /dev/bus/usb:/dev/bus/usb
       - /dev/input:/dev/input
+      - /etc/localtime:/etc/localtime:ro
+      - $HOME/.Xauthority:/root/.Xauthority:rw

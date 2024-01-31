@@ -1,5 +1,5 @@
 # FROM ros:foxy-ros-base
-FROM ros:foxy-ros-core
+FROM ros:foxy-ros-core-focal
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -20,8 +20,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-vcstool \
     python3-rosdep \
     python-is-python3 \
-    python3-colcon-common-extensions \
-    && rm -rf /var/lib/apt/lists/*
+    python3-colcon-common-extensions && \
+    rm -rf /var/lib/apt/lists/*
 
 # Set the locale
 RUN sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen && \
