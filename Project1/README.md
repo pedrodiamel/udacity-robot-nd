@@ -2,6 +2,13 @@
 
 ## Project 1 Gazebo
 
+### Basic commands
+
+```bash
+source /opt/ros/humble/setup.bash
+
+```
+
 ### Install
 
 ```bash

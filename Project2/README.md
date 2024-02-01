@@ -9,11 +9,29 @@
 export GAZEBO_MODEL_PATH=/root/.gazebo/model:$GAZEBO_MODEL_PATH
 export GAZEBO_MODEL_DATABASE_URI="http://models.gazebosim.org/"
 
+byobu
+source /opt/ros/kinetic/setup.bash
+source devel/setup.bash
+source devel/setup.bash & roslaunch my_robot world.launch
+source devel/setup.bash & roslaunch ball_chaser ball_chaser.launch
+source devel/setup.bash & rosrun rqt_image_view rqt_image_view
+
+# RViz Setup
+# Setup RViz to visualize the sensor readings. On the left side of RViz, under Displays:
+
+# Select odom for fixed frame
+# Click the Add button and
+# add RobotModel and your robot model should load up in RViz.
+# add Camera and select the Image topic that was defined in the camera Gazebo plugin
+# add LaserScan and select the topic that was defined in the Hokuyo Gazebo plugin
+
+
 source /opt/ros/kinetic/setup.bash
 catkin_init_workspace
 catkin_make
 catkin_create_pkg my_robot
 
+source devel/setup.bash
 roslaunch <node> <>.launch
 roslaunch my_robot world.launch
 
