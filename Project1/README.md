@@ -35,6 +35,10 @@ export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:/workspace/Project1/build
 gazebo world/udacityOffice.world
 
 
+# Gazebo modern version
+sudo apt-get install ros-${ROS_DISTRO}-ros-gz
+
+
 ```
 
 ### Git
@@ -49,3 +53,4 @@ gazebo world/udacityOffice.world
 ### Doc
 
 - <http://gazebosim.org/tutorials>
+- <https://docs.ros.org/en/kilted/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html>
