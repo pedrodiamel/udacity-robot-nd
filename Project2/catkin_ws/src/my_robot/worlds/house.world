@@ -22,8 +22,6 @@
       <uri>model://ball</uri>
     </include>
 
-
-
     <include>
       <pose>-0.097308 5.42984 0 0 -0 0</pose>
       <uri>model://telephone_pole</uri>
@@ -47,7 +45,6 @@
       <name>table_3</name>
       <uri>model://table</uri>
     </include>
-
 
     </world>
   </sdf>

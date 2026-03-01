@@ -14,8 +14,8 @@ services:
     environment:
       - ROS_DOMAIN_ID=${ROS_DOMAIN_ID:-42}
       - RMW_IMPLEMENTATION=${RMW_IMPLEMENTATION:-rmw_fastrtps_cpp}
-      - FASTDDS_DEFAULT_PROFILES_FILE=/workspace/cfg/fastdds.xml
-      - FASTRTPS_DEFAULT_PROFILES_FILE=/workspace/cfg/fastdds.xml
+      - FASTDDS_DEFAULT_PROFILES_FILE=/cfg/fastdds.xml
+      - FASTRTPS_DEFAULT_PROFILES_FILE=/cfg/fastdds.xml
       - NVIDIA_VISIBLE_DEVICES=all
       - NVIDIA_DRIVER_CAPABILITIES=all
       - DISPLAY=${DISPLAY}
@@ -28,7 +28,7 @@ services:
       - "6006:6006"
 
     volumes:
-      - ${HOME}/.ros:/workspace/cfg:ro
+      - ${HOME}/.ros:/cfg:ro
       - .:/workspace/Project1
       - /tmp/.X11-unix:/tmp/.X11-unix
       - /dev/bus/usb:/dev/bus/usb

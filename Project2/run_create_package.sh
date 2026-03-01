@@ -11,12 +11,10 @@ catkin_init_workspace
 cd /workspace/catkin_ws/src/
 catkin_create_pkg my_robot
 
-# Next, create a worlds directory and a launch directory, that will further define 
+# Next, create a worlds directory and a launch directory, that will further define
 # the structure of your package:
 
 cd /workspace/catkin_ws/src/my_robot/
 mkdir launch
 mkdir worlds
-
 mkdir urdf
-
